@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eur2usd</title>
+    <link rel="icon" href="usd.png" type="image/x-icon">
+    
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #3ABEF9; /* Светлый фон */
+            background-image: url(bg.jpeg);
+            font-family: verdana, Sans-serif;
+        }R
+        .container {
+            text-align: center;
+            background-color: #ffffff; /* Белый фон для контейнера */
+            border-radius: 10px; /* Закругленные углы */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Тень */
+            padding: 20px;
+            
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px; /* Закругленные углы для изображения */
+        }
+        h1 {
+            color: #ffffff; /* Цвет заголовка */
+        }
+        p {
+            color: #ffffff; /* Цвет текста */
+            font-size: 25px; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Вы видите предскозание курса евро к доллару</h1>
+        <p id="tomorrow-date"></p> <!-- Место для вывода даты -->
+        <img src="output.jpg" alt="Описание картинки">
+    </div>
+    <script>
+        // Получаем текущую дату
+        const today = new Date();
+        // Увеличиваем день на 1
+        const tomorrow = new Date(today);
+        tomorrow.setDate(today.getDate() + 1);
+        
+        // Форматируем дату в строку
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        const formattedDate = tomorrow.toLocaleDateString('ru-RU', options);
+        
+        // Выводим завтрашнюю дату на страницу
+        document.getElementById('tomorrow-date').textContent = formattedDate;
+    </script>
+</body>
+</html>
